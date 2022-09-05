@@ -1,0 +1,74 @@
+// Class Stack 
+
+class MyStack {
+    // array to hold numbers ---> init 10 elem
+    
+    int[] stack = new int[10];
+    // var to remember the top of stack
+    int topOfStack;
+    
+    // Constructor to initialize the topOfStack var to -1
+    MyStack() {
+        topOfStack = -1;
+    }
+    
+    
+    // Method push will push the number(i) to stack array
+    void push(int i) {
+        // if topOfStack is already at its max capacity
+        if (topOfStack == 9) {
+            System.out.println("Stack is full");
+        } 
+        // increment topOfStack and store in stack array at topOfStack position, the number (i.e. passed to the method)
+        else {
+            stack[++topOfStack] = i;
+        }
+    }
+    
+    // Pop will pop out the last inserted element
+    void pop() {
+        // checks if stack is empty 
+        if (topOfStack < 0) {
+            System.out.println("Stack is empty");
+        } 
+        // decrement the topOfStack and returns the last inserted element
+        else {
+            int result = stack[--topOfStack];
+            System.out.println(result);
+        }
+    }
+    
+    // to Print the stack
+    void print() {
+        for (int i=0; i<10; i++) {
+            System.out.println(stack[i]);
+        }
+    }
+    
+    
+}
+
+
+// Driver class
+public class Main {
+    // Driver method
+    public static void main(String[] args) {
+        // Creates a MyStack type obj i.e. myStack
+        // assigned the myStack obj to MyStack class's constructor
+        MyStack myStack = new MyStack();
+
+        // Playing with the program
+        
+        // myStack.pop();
+        myStack.push(13);
+        myStack.push(12);
+        myStack.pop();
+        myStack.print();
+        
+        
+    }
+}
+
+
+
+
